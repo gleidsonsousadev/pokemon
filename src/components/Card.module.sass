@@ -1,0 +1,43 @@
+.PokemonItemContainer
+    padding: 10px
+    position: relative
+    
+    &:hover
+        z-index: 1000
+
+
+    .CardItem
+        background: #343434
+        color: #ffffff
+        height: 15rem
+        padding: 10px
+        border-radius: 15px
+        filter: grayscale(70%)
+
+        &:hover 
+            transform: scale(1.1) rotate(10deg)
+            border: 2px solid #ffcc00
+            transition: 0.3s
+            box-shadow: 0px 0px 100px #ffdd008e
+            cursor: pointer
+            filter: grayscale(0%)
+
+        &:active
+            transform: rotate(-5deg)
+
+        .CardImage
+            width: 10rem
+            height: 10rem
+            margin: 0 auto
+            border-radius: 50%
+            text-align: center
+
+            img
+                margin-top: 5px
+                height: 150px
+
+        .CardInfo
+            color: #ccc
+            font-weight: bold
+            text-align: center
+            font-size: 1.5rem
