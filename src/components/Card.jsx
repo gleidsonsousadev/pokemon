@@ -1,8 +1,9 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { Col } from "react-bootstrap";
-import styles from "./Card.module.sass";
+import axios from "axios";
 import ReactLoading from "react-loading";
+import { Col } from "react-bootstrap";
+
+import styles from "./Card.module.sass";
 
 export function Card({ pokemon, handleClick }) {
   const [pokemonDetails, setPokemonDetails] = useState();

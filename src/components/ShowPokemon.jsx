@@ -1,5 +1,6 @@
-import styles from "./ShowPokemon.module.sass";
 import { Form } from "react-bootstrap";
+
+import styles from "./ShowPokemon.module.sass";
 
 export function ShowPokemon({ pokemon }) {
   const imgUrl = pokemon?.sprites?.other?.dream_world?.front_default;
@@ -7,6 +8,22 @@ export function ShowPokemon({ pokemon }) {
   const moves = pokemon?.moves;
 
   if (!moves) return <></>;
+
+  const PokemonMoves = () => {
+    return (
+      <Form.Select aria-label="Movimentos" size="lg" className={styles.Moves}>
+        <option>↓ Movimentos ↓</option>
+        {moves?.map((item) => {
+          const selectMoves = item?.move?.name;
+          return (
+            <option value={selectMoves} key={selectMoves}>
+              {selectMoves}
+            </option>
+          );
+        })}
+      </Form.Select>
+    );
+  }
 
   return (
     <>
@@ -22,24 +39,7 @@ export function ShowPokemon({ pokemon }) {
           return <div key={item.ability.name}> {item?.ability?.name} </div>;
         })}
       </div>
-
-      <div className={styles.MovesPokemon}>{SelectBasicExample()}</div>
+      <PokemonMoves />
     </>
   );
-
-  function SelectBasicExample() {
-    return (
-      <Form.Select aria-label="Movimentos" size="lg" className={styles.Moves}>
-        <option>↓ Movimentos ↓</option>
-        {moves?.map((item) => {
-          const selectMoves = item?.move?.name;
-          return (
-            <option value={selectMoves} key={selectMoves}>
-              {selectMoves}
-            </option>
-          );
-        })}
-      </Form.Select>
-    );
-  }
 }

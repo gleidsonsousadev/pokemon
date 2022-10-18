@@ -1,24 +1,26 @@
-import React, { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "./App.module.sass";
-import { Card } from "./components/Card";
-import axios from "axios";
+import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import axios from "axios";
+
+import { Card } from "./components/Card";
 import { ShowPokemon } from "./components/ShowPokemon";
 import { Pagination } from "./components/Pagination";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import styles from "./App.module.sass";
 
 function App() {
   const [pokemon, setPokemon] = useState({});
   const [pokemonInfo, setPokemonInfo] = useState();
-  
+
   useEffect(() => getPokemons(), []);
-  
+
   const getPokemons = (url) => {
     const _url = "https://pokeapi.co/api/v2/pokemon";
     axios.get(url || _url).then((response) => {
-      setPokemon(response.data)
-    })
-  }
+      setPokemon(response.data);
+    });
+  };
 
   return (
     <Container className={styles.ContainerApp}>
@@ -35,7 +37,7 @@ function App() {
               );
             })}
           </Row>
-            <Pagination data={pokemon} handleClick={getPokemons} />
+          <Pagination data={pokemon} handleClick={getPokemons} />
         </Col>
 
         <Col md={3}>
