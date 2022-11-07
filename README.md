@@ -12,7 +12,7 @@ Para rodar projeto, siga as etapas abaixo:
 
 - Clonar o projeto
 
-git clone xxxxxxxxx
+git clone git@github.com:gleidsonsousadev/pokemon.git
 
 - Acessar o diretório do projeto clonado e digite no terminal o seguinte comando:
 
