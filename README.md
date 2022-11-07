@@ -20,4 +20,4 @@ npm install && npm start
 
 Abra o seu navegador e digite o enderço localhost:3000
 
-Acesse a aplicaçao clicando aqui
+Acesse a aplicaçao [clicando aqui](http://www.tribodigital.com.br/gleidson/pokemon-final/).
